@@ -41,7 +41,7 @@ function Form() {
     if (!validate()) return;
 
     try {
-      const response = await fetch('http://localhost:5000/submit', {
+      const response = await fetch('https://user-details-collection-app.onrender.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
