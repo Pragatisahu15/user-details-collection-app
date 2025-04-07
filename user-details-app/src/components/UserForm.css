@@ -1,0 +1,90 @@
+/* Existing styles for User List */
+.user-list-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-list-title {
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 28px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.user-item {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-left: 5px solid #1976d2;
+  border-radius: 16px;
+  padding: 20px 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease-in-out;
+}
+
+.user-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background-color: #f3faff;
+}
+
+.user-item strong {
+  display: block;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.user-item p {
+  margin: 6px 0;
+  font-size: 16px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Optional: Add icons styling */
+.user-item p::before {
+  font-size: 18px;
+}
+
+/* Styling for Submit and Edit buttons */
+.submit-button {
+  background-color: #4CAF50;  /* Green color */
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #45a049;  /* Slightly darker green on hover */
+}
+
+/* Style for the Edit button */
+.edit-button {
+  background-color: #f0ad4e;  /* Orange color */
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.edit-button:hover {
+  background-color: #ec971f;  /* Slightly darker orange on hover */
+}

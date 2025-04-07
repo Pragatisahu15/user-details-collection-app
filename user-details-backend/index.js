@@ -1,8 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import cors from 'cors';
+import cors from 'cors';             // ✅ Import only once
 import dotenv from 'dotenv';
-import User from './models/User.js';
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
@@ -10,25 +10,18 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['https://user-details-collection-app.vercel.app', 'http://localhost:5173']
+}));
 app.use(express.json());
 
-// Test route
+// Root route
 app.get('/', (req, res) => {
   res.send('User Details API is running...');
 });
 
-// Handle form data submission
-app.post('/submit', async (req, res) => {
-  try {
-    const newUser = new User(req.body);
-    await newUser.save();
-    res.status(201).json({ message: 'User data saved successfully!' });
-  } catch (error) {
-    console.error('Error saving user:', error);
-    res.status(400).json({ error: 'Failed to save user data.', details: error.message });
-  }
-});
+// Use userRoutes for all /api/users endpoints
+app.use('/api/users', userRoutes);
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {

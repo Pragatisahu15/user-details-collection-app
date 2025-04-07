@@ -1,0 +1,39 @@
+/* In your UserList.css */
+.button-container {
+    display: flex;
+    gap: 10px; /* Adds space between the buttons */
+  }
+  
+  .edit-button,
+  .delete-button {
+    padding: 6px 12px; /* Smaller size for the button */
+    font-size: 14px; /* Adjust font size */
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: auto; /* Makes the button width auto (shorter) */
+    min-width: 80px; /* Optional: sets a minimum width for consistency */
+    text-align: center; /* Centers text inside the button */
+  }
+  
+  .edit-button {
+    background-color: #4caf50; /* Green background */
+    color: white;
+  }
+  
+  .delete-button {
+    background-color: #f44336; /* Red background */
+    color: white;
+  }
+  
+  .edit-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Hover effect */
+  }
+  
+  .delete-button:hover {
+    background-color: #e53935; /* Darker red on hover */
+    transform: translateY(-2px); /* Hover effect */
+  }
+  
