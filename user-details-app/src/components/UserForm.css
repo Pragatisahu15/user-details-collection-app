@@ -1,7 +1,7 @@
 .form-title {
   font-size: 26px;
   font-weight: 1000;
-  color: #1976d2; /* Matches your theme */
+  color: #1976d2; 
   text-align: center;
   margin-bottom: 24px;
   text-transform: uppercase;
@@ -59,14 +59,14 @@
   gap: 6px;
 }
 
-/* Optional: Add icons styling */
+/*  Add icons styling */
 .user-item p::before {
   font-size: 18px;
 }
 
-/* Styling for Submit and Edit buttons */
+
 .submit-button {
-  background-color: #4CAF50;  /* Green color */
+  background-color: #4CAF50;  
   color: white;
   font-size: 16px;
   padding: 12px 24px;
@@ -78,12 +78,11 @@
 }
 
 .submit-button:hover {
-  background-color: #45a049;  /* Slightly darker green on hover */
+  background-color: #45a049;  
 }
 
-/* Style for the Edit button */
 .edit-button {
-  background-color: #f0ad4e;  /* Orange color */
+  background-color: #f0ad4e;  
   color: white;
   font-size: 16px;
   padding: 12px 24px;
@@ -95,5 +94,5 @@
 }
 
 .edit-button:hover {
-  background-color: #ec971f;  /* Slightly darker orange on hover */
+  background-color: #ec971f; 
 }

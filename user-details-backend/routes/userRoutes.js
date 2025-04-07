@@ -4,7 +4,7 @@ import {
     getUsers,
     updateUser,
     deleteUser
-  } from '../controllers/UserController.js';  // This must match file name exactly
+  } from '../controllers/UserController.js';  // must match file name exactly
   
 
 const router = express.Router();
