@@ -1,4 +1,3 @@
-// DeleteUser.jsx
 import axios from 'axios';
 
 const DeleteUser = async (userId, fetchUsers) => {

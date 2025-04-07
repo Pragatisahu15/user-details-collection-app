@@ -1,4 +1,4 @@
-/* In your UserList.css */
+
 .button-container {
     display: flex;
     gap: 10px; /* Adds space between the buttons */
@@ -13,7 +13,7 @@
     border: none;
     cursor: pointer;
     width: auto; /* Makes the button width auto (shorter) */
-    min-width: 80px; /* Optional: sets a minimum width for consistency */
+    min-width: 80px; 
     text-align: center; /* Centers text inside the button */
   }
   
@@ -36,4 +36,26 @@
     background-color: #e53935; /* Darker red on hover */
     transform: translateY(-2px); /* Hover effect */
   }
+  
+  .user-list-title {
+    color: #1e3a8a; 
+    font-weight: 600;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    display: block;
+  }
+  
+  .user-list-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #1976d2;
+    margin: 8px auto 0;
+    border-radius: 4px;
+  }
+
   

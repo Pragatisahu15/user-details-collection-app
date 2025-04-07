@@ -1,4 +1,3 @@
-// UpdateUser.jsx
 import axios from 'axios';
 
 const UpdateUser = async (userId, updatedData) => {

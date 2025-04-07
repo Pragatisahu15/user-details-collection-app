@@ -1,4 +1,13 @@
-/* Existing styles for User List */
+.form-title {
+  font-size: 26px;
+  font-weight: 1000;
+  color: #1976d2; /* Matches your theme */
+  text-align: center;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .user-list-container {
   max-width: 800px;
   margin: 40px auto;
