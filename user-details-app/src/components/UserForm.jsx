@@ -8,8 +8,10 @@ import {
   Box,
   Paper,
 } from '@mui/material';
+import { toast } from 'react-hot-toast';
 
-function UserForm({ editingUser, setEditingUser, onFormSubmit }) {
+function UserForm({ editingUser, setEditingUser, onFormSubmit, existingUsers }) {
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -46,15 +48,48 @@ function UserForm({ editingUser, setEditingUser, onFormSubmit }) {
 
   const validate = () => {
     const newErrors = {};
+  
+    // First Name & Last Name
     if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
     if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
-    if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Phone must be 10 digits';
-    if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email format';
+  
+    // Phone Number (must be exactly 10 digits and numeric only)
+    if (!/^\d+$/.test(formData.phone)) {
+      newErrors.phone = 'Phone must contain digits only';
+    } else if (formData.phone.length !== 10) {
+      newErrors.phone = 'Phone must be exactly 10 digits';
+    }
+  
+    // Email Validation using stricter regex
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.email = 'Invalid email format';
+    }
+  
+    // Address
     if (!formData.address.trim()) newErrors.address = 'Address is required';
+  
+    //  Duplicate user check (only when NOT editing)
+    if (existingUsers && !editingUser) {
+      const isDuplicate = existingUsers.some(user =>
+        user.firstName.trim().toLowerCase() === formData.firstName.trim().toLowerCase() &&
+        user.lastName.trim().toLowerCase() === formData.lastName.trim().toLowerCase() &&
+        user.phone === formData.phone &&
+        user.email.trim().toLowerCase() === formData.email.trim().toLowerCase() &&
+        user.address.trim().toLowerCase() === formData.address.trim().toLowerCase()
+      );
+  
+      if (isDuplicate) {
+        toast.error('User with same details already exists');
+          return false; // Prevent form from submitting
+      }
+    }
+  
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
+  
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;

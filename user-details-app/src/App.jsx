@@ -58,12 +58,15 @@ function App() {
 
   return (
     <>
-      {/* 🚫 Removed: <Toaster /> */}
-      <UserForm
-        editingUser={editingUser}
-        setEditingUser={setEditingUser}
-        onFormSubmit={handleFormSubmit}
-      />
+     
+     <UserForm
+      editingUser={editingUser}
+      setEditingUser={setEditingUser}
+      onFormSubmit={handleFormSubmit}
+      existingUsers={users}
+     />
+
+
       <UserList users={users} onEdit={handleEdit} onDelete={handleDelete} />
     </>
   );
